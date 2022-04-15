@@ -24,3 +24,7 @@ def test_sub():
 
 def test_sub_1():
     assert sub(8) == 3
+
+
+def test_clem():
+    assert sub(5) == 4
