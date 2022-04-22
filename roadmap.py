@@ -10,9 +10,6 @@ from contextlib import redirect_stdout
 import sys
 from crystal_trucks import game
 
-number_map = int(sys.argv[1])
-sample = str(sys.argv[2])
-
 
 # Ecriture de la map choisit avec les informations liées dans le fichier designée
 def write_map(seed, filename):
@@ -23,14 +20,6 @@ def write_map(seed, filename):
     with open(filename, "w", encoding="utf-8") as file:
         file.write(out)
         file.close()
-
-
-# Recupération de la map dans le fichier
-def mapping(filename, number_height):
-    with open(filename, "r", encoding="utf-8") as file:
-        map = file.readlines()[5:(5 + int(number_height))]
-        file.close()
-    return map
 
 
 # recupereration des information de la map, nombre de camion, longueur et largeur de la map
@@ -48,18 +37,26 @@ def nombre_de_camion(data):
     return nombre_camion
 
 
-# hauteur de la map
-def height_map(data):
-    height = data[1].split(" ")
-    nombre_hauteur = int(height[1])
-    return nombre_hauteur
-
-
 # Largeur de la map
 def width_map(data):
     width = data[1].split(" ")
     number_width = int(width[1])
     return number_width
+
+
+# hauteur de la map
+def height_map(data):
+    height = data[2].split(" ")
+    nombre_hauteur = int(height[1])
+    return nombre_hauteur
+
+
+# Recupération de la map dans le fichier
+def mapping(filename, number_height):
+    with open(filename, "r", encoding="utf-8") as file:
+        map = file.readlines()[5:(5 + int(number_height))]
+        file.close()
+    return map
 
 
 # Création d'un dictionnaire avec toute les coordonnées des crystaux et le nombre de crystaux a l'emplacement
@@ -69,7 +66,7 @@ def matrice_de_la_map(map, number_width):
         x = 0
         if not y % 2:
             for char in map[y]:
-                if x < int(number_width):
+                if x <= int(number_width):
                     if char == "1":
                         matrice_map.append({'x': x, 'y': y, 'dig': 1})
                     elif char == "2":
@@ -103,9 +100,9 @@ def list_truck(number_trucks):
 
 
 # Créarion des trajets optimisé
-def trajet(matrice_map):
+def trajet(matrice_map,truck):
     result = []
-    while matrice_map:
+    while len(matrice_map) >0:
         index = 0
         tour = 1000
         i = 0
@@ -131,29 +128,3 @@ def ecriture_trajet(filename, trajet):
     with open(filename, "a", encoding="utf-8") as file:
         file.write("".join(trajet))
         file.close()
-
-
-# """------------------------------Main----------------------------"""
-
-write_map(number_map, sample)
-
-# definition des données de la map
-data = recuperation_data(sample)
-number_trucks = nombre_de_camion(data)
-number_width = width_map(data)
-number_height = height_map(data)
-
-# definition de la map
-map = mapping(sample,number_height)
-
-# matrice de donnée
-matrice_map = matrice_de_la_map(map,number_width)
-
-# liste de camion
-truck = list_truck(number_trucks)
-
-# création des trajets
-result = trajet(matrice_map)
-
-# ecriture du trajet
-ecriture_trajet(sample, result)
