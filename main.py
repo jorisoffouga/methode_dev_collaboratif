@@ -20,7 +20,7 @@ map = roadmap.mapping(sample,number_height)
 
 # matrice de donnée
 matrice_map = roadmap.matrice_de_la_map(map,number_width)
-
+print(matrice_map)
 
 # liste de camion
 truck = roadmap.list_truck(number_trucks)
