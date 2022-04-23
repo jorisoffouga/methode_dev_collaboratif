@@ -6,3 +6,8 @@ py==1.11.0
 pyparsing==3.0.8
 pytest==7.1.1
 tomli==2.0.1
+black==19.10
+pre-commit==2.18.1
+arcade==2.6.3
+pyserial==3.5
+python-dev-tools

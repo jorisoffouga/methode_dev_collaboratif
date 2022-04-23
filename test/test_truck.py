@@ -74,11 +74,24 @@ def test_move_1():
         {"x": 5, "y": 0, "dig": 2},
         {"x": 1, "y": 0, "dig": 0},
     ]
-    result = f"0 MOVE 0 1 0\n1 MOVE 0 2 0\n2 MOVE 0 3 0\n3 MOVE 0 4 0\n4 MOVE 0 5 0\n"
-    result += f"5 MOVE 0 6 0\n6 MOVE 0 7 0\n7 MOVE 0 8 0\n8 MOVE 0 9 0\n9 MOVE 0 10 0\n"
-    result += f"10 MOVE 0 10 1\n11 MOVE 0 10 2\n12 MOVE 0 10 3\n13 MOVE 0 10 4\n14 MOVE 0 10 5\n"
-    result += f"15 MOVE 0 10 6\n16 MOVE 0 10 7\n17 MOVE 0 10 8\n18 MOVE 0 10 9\n19 MOVE 0 10 10\n"
-    result += f"20 DIG 0 10 10\n"
+    result += (
+        f"0 MOVE 0 1 0\n"
+        f"1 MOVE 0 2 0\n"
+        f"2 MOVE 0 3 0\n"
+        f"3 MOVE 0 4 0\n"
+        f"4 MOVE 0 5 0\n"
+        f"5 MOVE 0 6 0\n"
+        f"6 MOVE 0 7 0\n"
+        f"7 MOVE 0 8 0\n"
+        f"8 MOVE 0 9 0\n"
+        f"9 MOVE 0 10 0\n"
+        f"10 MOVE 0 10 1\n"
+        f"11 MOVE 0 10 2\n12 MOVE 0 10 3"
+        f"\n13 MOVE 0 10 4\n14 MOVE 0 10 5\n"
+        f"15 MOVE 0 10 6\n16 MOVE 0 10 7\n17 MOVE 0 10 8"
+        f"\n18 MOVE 0 10 9\n19 MOVE 0 10 10\n"
+        f"20 DIG 0 10 10\n"
+    )
     assert truck_01.move(matrice_test[0]) == result
 
 
