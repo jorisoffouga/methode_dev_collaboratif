@@ -2,16 +2,13 @@
 #
 # """----------------------------------------------------------"""
 
-
-import math
 from trucks_opti import Truck
 import io
 from contextlib import redirect_stdout
-import sys
 from crystal_trucks import game
 
-
-# Ecriture de la map choisit avec les informations liées dans le fichier designée
+# Ecriture de la map choisit
+# Avec les informations liées dans le fichier designée
 def write_map(seed, filename):
     f = io.StringIO()
     with redirect_stdout(f):
@@ -22,7 +19,8 @@ def write_map(seed, filename):
         file.close()
 
 
-# recupereration des information de la map, nombre de camion, longueur et largeur de la map
+# Recupereration des information de la map
+# Nombre de camion, longueur et largeur de la map
 def recuperation_data(filename):
     with open(filename, "r", encoding="utf-8") as file:
         data = file.readlines()[0:3]
@@ -54,12 +52,13 @@ def height_map(data):
 # Recupération de la map dans le fichier
 def mapping(filename, number_height):
     with open(filename, "r", encoding="utf-8") as file:
-        map = file.readlines()[5:(5 + int(number_height))]
+        map = file.readlines()[5 : (5 + int(number_height))]
         file.close()
     return map
 
 
-# Création d'un dictionnaire avec toute les coordonnées des crystaux et le nombre de crystaux a l'emplacement
+# Création d'un dictionnaire avec toute les coordonnées des crystaux
+# Ainsi que le nombre de crystaux a l'emplacement
 def matrice_de_la_map(map, number_width):
     matrice_map = []
     for y in range(len(map)):
@@ -68,23 +67,23 @@ def matrice_de_la_map(map, number_width):
             for char in map[y]:
                 if x <= int(number_width):
                     if char == "1":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 1})
+                        matrice_map.append({"x": x, "y": y, "dig": 1})
                     elif char == "2":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 2})
+                        matrice_map.append({"x": x, "y": y, "dig": 2})
                     else:
                         pass
 
                 x += 1
         else:
-            reversed_string = ''.join(reversed(map[y]))
+            reversed_string = "".join(reversed(map[y]))
             x = int(number_width)
 
             for char in reversed_string:
                 if x < int(number_width):
                     if char == "1":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 1})
+                        matrice_map.append({"x": x, "y": y, "dig": 1})
                     elif char == "2":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 2})
+                        matrice_map.append({"x": x, "y": y, "dig": 2})
                     else:
                         pass
                 x -= 1
@@ -95,14 +94,14 @@ def matrice_de_la_map(map, number_width):
 def list_truck(number_trucks):
     truck = []
     for number in range(int(number_trucks)):
-        truck.append(Truck(number, {'x': 0, 'y': number}))
-    return  truck
+        truck.append(Truck(number, {"x": 0, "y": number}))
+    return truck
 
 
 # Créarion des trajets optimisé
-def trajet(matrice_map,truck):
+def trajet(matrice_map, truck):
     result = []
-    while len(matrice_map) >0:
+    while len(matrice_map) > 0:
         index = 0
         tour = 1000
         i = 0

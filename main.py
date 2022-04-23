@@ -16,10 +16,10 @@ number_width = roadmap.width_map(data)
 number_height = roadmap.height_map(data)
 
 # definition de la map
-map = roadmap.mapping(sample,number_height)
+map = roadmap.mapping(sample, number_height)
 
 # matrice de donnée
-matrice_map = roadmap.matrice_de_la_map(map,number_width)
+matrice_map = roadmap.matrice_de_la_map(map, number_width)
 print(matrice_map)
 
 # liste de camion
@@ -27,10 +27,9 @@ truck = roadmap.list_truck(number_trucks)
 
 
 # création des trajets
-result = roadmap.trajet(matrice_map,truck)
+result = roadmap.trajet(matrice_map, truck)
 
 print(result)
 
 # ecriture du trajet
 roadmap.ecriture_trajet(sample, result)
-

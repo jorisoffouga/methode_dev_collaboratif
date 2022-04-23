@@ -30,7 +30,7 @@ with open("sample_opti.txt", "r", encoding="utf-8") as file:
     number_height = height[1]
 
 with open("sample_opti.txt", "r", encoding="utf-8") as file:
-    map = file.readlines()[5:(5+int(number_height))]
+    map = file.readlines()[5 : (5 + int(number_height))]
 
 matrice_map = []
 with open("sample_opti.txt", "r", encoding="utf-8") as file:
@@ -41,28 +41,28 @@ with open("sample_opti.txt", "r", encoding="utf-8") as file:
             for char in map[y]:
                 if x < int(number_width):
                     if char == "1":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 1})
+                        matrice_map.append({"x": x, "y": y, "dig": 1})
                     elif char == "2":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 2})
+                        matrice_map.append({"x": x, "y": y, "dig": 2})
                     else:
                         pass
 
                 x += 1
         else:
-            reversed_string = ''.join(reversed(map[y]))
+            reversed_string = "".join(reversed(map[y]))
             x = int(number_width)
 
             for char in reversed_string:
                 if x < int(number_width):
                     if char == "1":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 1})
+                        matrice_map.append({"x": x, "y": y, "dig": 1})
                     elif char == "2":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 2})
+                        matrice_map.append({"x": x, "y": y, "dig": 2})
                     else:
                         pass
                 x -= 1
 
-truck_0 = Truck(0,{'x':0,'y':0})
+truck_0 = Truck(0, {"x": 0, "y": 0})
 result = []
 while matrice_map:
     plus_proche = truck_0.recherche_du_plus_proche(matrice_map)

@@ -28,7 +28,7 @@ def write_map(seed, filename):
 # Recupération de la map dans le fichier
 def mapping(filename, number_height):
     with open(filename, "r", encoding="utf-8") as file:
-        map = file.readlines()[5:(5 + int(number_height))]
+        map = file.readlines()[5 : (5 + int(number_height))]
     return map
 
 
@@ -69,23 +69,23 @@ def matrice_de_la_map(map, number_width):
             for char in map[y]:
                 if x < int(number_width):
                     if char == "1":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 1})
+                        matrice_map.append({"x": x, "y": y, "dig": 1})
                     elif char == "2":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 2})
+                        matrice_map.append({"x": x, "y": y, "dig": 2})
                     else:
                         pass
 
                 x += 1
         else:
-            reversed_string = ''.join(reversed(map[y]))
+            reversed_string = "".join(reversed(map[y]))
             x = int(number_width)
 
             for char in reversed_string:
                 if x < int(number_width):
                     if char == "1":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 1})
+                        matrice_map.append({"x": x, "y": y, "dig": 1})
                     elif char == "2":
-                        matrice_map.append({'x': x, 'y': y, 'dig': 2})
+                        matrice_map.append({"x": x, "y": y, "dig": 2})
                     else:
                         pass
                 x -= 1
@@ -96,8 +96,8 @@ def matrice_de_la_map(map, number_width):
 def list_truck(number_trucks):
     truck = []
     for number in range(int(number_trucks)):
-        truck.append(Truck(number, {'x': 0, 'y': number}))
-    return  truck
+        truck.append(Truck(number, {"x": 0, "y": number}))
+    return truck
 
 
 # Créarion des trajets optimisé
@@ -141,10 +141,10 @@ number_width = width_map(data)
 number_height = height_map(data)
 
 # definition de la map
-map = mapping(sample,number_height)
+map = mapping(sample, number_height)
 
 # matrice de donnée
-matrice_map = matrice_de_la_map(map,number_width)
+matrice_map = matrice_de_la_map(map, number_width)
 
 # liste de camion
 truck = list_truck(number_trucks)
