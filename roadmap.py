@@ -5,7 +5,7 @@
 from trucks_opti import Truck
 import io
 from contextlib import redirect_stdout
-from crystal_trucks import game
+from crystal_truck import game
 
 # Ecriture de la map choisit
 # Avec les informations liées dans le fichier designée
