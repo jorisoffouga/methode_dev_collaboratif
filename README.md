@@ -11,7 +11,7 @@ Ce code qui permet de répondre au jeu suivant : https://github.com/vpoulaillea
 ## Algorithme
 
 Afin d'avoir très vite un projet fonctionnel :
-* pilotez un seul camion avec une double boucle sur les X et les Y, dossier : **_camion_seul_**
+* pilotez un seul camion avec une double boucle sur les X et les Y, dossier : [**_camion_seul_**](./camion_seul)
 * pilotez ensuite un seul camion en allant au cristal le plus proche, dossier : **_camion_seul_opti_**
 * pilotez ensuite plusieurs camions qui collaborent, dossier : **_camion_deplacement_opti_**
 
