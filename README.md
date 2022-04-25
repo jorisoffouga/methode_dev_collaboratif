@@ -53,6 +53,6 @@ Une fois le fichier texte ecrit avec la map choisit, on peux lancer le jeux.
 
 `cd crystal_trucks`
 
-`python ./crytal_trucks/viewer.py -i <fichier_ecriture.txt>`
+`python viewer.py -i ../<fichier_ecriture.txt>`
 
 La fenêtre de jeux s'ouvre !
