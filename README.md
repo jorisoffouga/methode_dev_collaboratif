@@ -6,7 +6,7 @@
 * Coopération avec git sur GitHub
   * Avec Marion Tapia
 
-Ce code qui permet de répondre au jeu suivant : https://github.com/vpoulailleau/crystal_trucks
+Ce code permet de répondre au jeu suivant : https://github.com/vpoulailleau/crystal_trucks
 
 ## Algorithme
 
