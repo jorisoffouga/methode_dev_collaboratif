@@ -29,34 +29,67 @@ commit sur git pour verifier que la pep8 est bien respecté grace à `black`.
 
 ## Exécution du programme
 
-Faire un git clone du repo
+### Pour Linux
 
-`git clone https://github.com/dylan6440/methode_dev_collaboratif.git`
+  * Faire un git clone du repo
+  
+  `git clone https://github.com/dylan6440/methode_dev_collaboratif.git`
+  
+  * Entrez dans le dossier
+  
+  `cd methode_dev_collaboratif/`
+  
+  * Avoir python3.8 (ou supérieure) pour crée un environement virtuel.
+  
+  `python3.8 -m venv <nom_environement_virtuel>`
+  
+  * Activé environnement virtuel.
+  
+  `source <nom_environement_virtuel>/bin/activate`
+  
+  * Une fois votre environnement actif, installer les librairies recommandé.
+  
+  `pip install -r requierements.txt`
+  
+  * Maintenant vous pouvez exécuter le main avec comme argument <numero_map> <fichier_ecriture.txt>
+  
+  `python main.py <numero_map> <fichier_ecriture.txt>`
+  
+  * Une fois le fichier texte ecrit avec la map choisit, on peux lancer le jeux.
+  
+  `cd crystal_trucks`
+  
+`python viewer.py -i ../<fichier_ecriture.txt>`
+  
+  * La fenêtre de jeux s'ouvre !
 
-Avoir python3.8 (ou supérieure) pour crée un environement virtuel.
+### Pour Windows
+
+ * Faire un git clone du repo
+
+ `git clone https://github.com/dylan6440/methode_dev_collaboratif.git`
+
+* Avoir python3.8 (ou supérieure) pour crée un environement virtuel.
 
 `python3.8 -m venv <nom_environement_virtuel>`
 
-Activé environnement virtuel.
 
-`<nom_environement_virtuel>/Scripts/activate` 
-
-Si vous etes sur windows il faut mettre la ligne suivante:
+* Si vous etes sur windows il faut mettre la ligne suivante:
 
 `<nom_environement_virtuel>/Scripts/Activate.ps1` 
 
-Une fois votre environnement actif, installer les librairies recommandé.
+* Une fois votre environnement actif, installer les librairies recommandé.
 
 `pip install -r requierements.txt`
 
-Maintenant vous pouvez exécuter le main avec comme argument <numero_map> <fichier_ecriture.txt>
+* Maintenant vous pouvez exécuter le main avec comme argument <numero_map> <fichier_ecriture.txt>
 
 `python main.py <numero_map> <fichier_ecriture.txt>`
 
-Une fois le fichier texte ecrit avec la map choisit, on peux lancer le jeux.
+* Une fois le fichier texte ecrit avec la map choisit, on peux lancer le jeux.
 
 `cd crystal_trucks`
 
 `python viewer.py -i ../<fichier_ecriture.txt>`
 
-La fenêtre de jeux s'ouvre !
+* La fenêtre de jeux s'ouvre !
