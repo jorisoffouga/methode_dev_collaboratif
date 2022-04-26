@@ -39,7 +39,11 @@ Avoir python3.8 (ou supérieure) pour crée un environement virtuel.
 
 Activé environnement virtuel.
 
-`<nom_environement_virtuel>/Scripts/activate`
+`<nom_environement_virtuel>/Scripts/activate` 
+
+Si vous etes sur windows il faut mettre la ligne suivante:
+
+`<nom_environement_virtuel>/Scripts/Activate.ps1` 
 
 Une fois votre environnement actif, installer les librairies recommandé.
 
