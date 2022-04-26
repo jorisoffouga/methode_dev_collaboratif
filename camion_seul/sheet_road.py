@@ -28,7 +28,7 @@ with open("sample.txt", "r", encoding="utf-8") as file:
     number_height = height[1]
 
 with open("sample.txt", "r", encoding="utf-8") as file:
-    map = file.readlines()[5:(5+int(number_height))]
+    map = file.readlines()[5 : (5 + int(number_height))]
 print(map)
 # map.reverse()
 # print(map)
@@ -53,7 +53,7 @@ with open("sample.txt", "a", encoding="utf-8") as file:
                         mouvement = f"{turn} MOVE 0 {x} {y}\n"
                         turn += 1
                         mouvement += f"{turn} DIG 0 {x} {y}\n"
-                        turn +=1
+                        turn += 1
                         mouvement += f"{turn} DIG 0 {x} {y}\n"
                         file.write(mouvement)
                         turn += 1
@@ -64,7 +64,7 @@ with open("sample.txt", "a", encoding="utf-8") as file:
 
                 x += 1
         else:
-            reversed_string = ''.join(reversed(map[y]))
+            reversed_string = "".join(reversed(map[y]))
             x = int(number_width)
 
             for char in reversed_string:

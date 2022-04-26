@@ -1,6 +1,4 @@
 .pytest_cache/*
 venv/*
-crystal_trucks
 .idea
 __pycache__/
-
