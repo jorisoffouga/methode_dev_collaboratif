@@ -8,14 +8,7 @@
 
 Ce code permet de répondre au jeu suivant : https://github.com/vpoulailleau/crystal_trucks
 
-## Algorithme
-
-Afin d'avoir très vite un projet fonctionnel :
-* pilotez un seul camion avec une double boucle sur les X et les Y, dossier : [**_camion_seul_**](./camion_seul)
-* pilotez ensuite un seul camion en allant au cristal le plus proche, dossier : [**_camion_seul_opti_**](./camion_seul_opti)
-* pilotez ensuite plusieurs camions qui collaborent, dossier : [**_camion_deplacement_opti_**](./camion_deplacement_opti)
-
-## Intégration continue
+## Intégration continue et qualimétrie
                              
 Grâce à CircleCI, chaque test est joué a chaque commit et pull_request cela permet de tester notre code en continu. 
 
@@ -25,6 +18,14 @@ Grâce à CircleCI, chaque test est joué a chaque commit et pull_request cela p
 
 Pour mettre la qualimétrie de nos fichiers, un pre-commit est effectué pour formater chaque ficher que l'on souhaite
 commit sur git pour verifier que la pep8 est bien respecté grace à `black`.
+
+
+## Algorithme
+
+Afin d'avoir très vite un projet fonctionnel :
+* pilotez un seul camion avec une double boucle sur les X et les Y, dossier : [**_camion_seul_**](./camion_seul)
+* pilotez ensuite un seul camion en allant au cristal le plus proche, dossier : [**_camion_seul_opti_**](./camion_seul_opti)
+* pilotez ensuite plusieurs camions qui collaborent, dossier : [**_camion_deplacement_opti_**](./camion_deplacement_opti)
 
 
 ## Exécution du programme
