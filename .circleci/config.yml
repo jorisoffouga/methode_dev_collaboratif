@@ -37,13 +37,6 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: python -m pytest
-          steps:
-  # (Other steps go here)
-  - name: "Upload coverage to Codecov"
-    uses: codecov/codecov-action@v2
-    with:
-      fail_ci_if_error: true
-      token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
