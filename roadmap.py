@@ -7,6 +7,7 @@ import io
 from contextlib import redirect_stdout
 from crystal_trucks import game
 
+
 # Ecriture de la map choisit
 # Avec les informations liées dans le fichier designée
 def write_map(seed, filename):
