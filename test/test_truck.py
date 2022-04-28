@@ -16,26 +16,6 @@ def test_recherche_plus_proche_1():
     assert truck_01.recherche_du_plus_proche(matrice_test) == 2
 
 
-def test_recherche_plus_proche_2():
-    truck_01 = Truck(0, {"x": 5, "y": 1})
-    matrice_test = [
-        {"x": 10, "y": 10, "dig": 1},
-        {"x": 5, "y": 0, "dig": 2},
-        {"x": 1, "y": 0, "dig": 0},
-    ]
-    assert truck_01.recherche_du_plus_proche(matrice_test) == 1
-
-
-def test_recherche_plus_proche_3():
-    truck_01 = Truck(0, {"x": 8, "y": 9})
-    matrice_test = [
-        {"x": 10, "y": 10, "dig": 1},
-        {"x": 5, "y": 0, "dig": 2},
-        {"x": 1, "y": 0, "dig": 0},
-    ]
-    assert truck_01.recherche_du_plus_proche(matrice_test) == 0
-
-
 def test_nombre_deplacement_1():
     truck_01 = Truck(0, {"x": 0, "y": 0})
     matrice_test = [
@@ -44,26 +24,6 @@ def test_nombre_deplacement_1():
         {"x": 1, "y": 0, "dig": 0},
     ]
     assert truck_01.nombre_tour_deplacement(matrice_test[0]) == 20
-
-
-def test_nombre_deplacement_2():
-    truck_01 = Truck(0, {"x": 0, "y": 0})
-    matrice_test = [
-        {"x": 10, "y": 10, "dig": 1},
-        {"x": 5, "y": 0, "dig": 2},
-        {"x": 1, "y": 0, "dig": 0},
-    ]
-    assert truck_01.nombre_tour_deplacement(matrice_test[1]) == 5
-
-
-def test_nombre_deplacement_3():
-    truck_01 = Truck(0, {"x": 0, "y": 0})
-    matrice_test = [
-        {"x": 10, "y": 10, "dig": 1},
-        {"x": 5, "y": 0, "dig": 2},
-        {"x": 1, "y": 0, "dig": 0},
-    ]
-    assert truck_01.nombre_tour_deplacement(matrice_test[2]) == 1
 
 
 def test_move_1():
@@ -95,6 +55,26 @@ def test_move_1():
     assert truck_01.move(matrice_test[0]) == result
 
 
+def test_recherche_plus_proche_2():
+    truck_01 = Truck(0, {"x": 5, "y": 1})
+    matrice_test = [
+        {"x": 10, "y": 10, "dig": 1},
+        {"x": 5, "y": 0, "dig": 2},
+        {"x": 1, "y": 0, "dig": 0},
+    ]
+    assert truck_01.recherche_du_plus_proche(matrice_test) == 1
+
+
+def test_nombre_deplacement_2():
+    truck_01 = Truck(0, {"x": 0, "y": 0})
+    matrice_test = [
+        {"x": 10, "y": 10, "dig": 1},
+        {"x": 5, "y": 0, "dig": 2},
+        {"x": 1, "y": 0, "dig": 0},
+    ]
+    assert truck_01.nombre_tour_deplacement(matrice_test[1]) == 5
+
+
 def test_move_2():
     result = ""
     truck_01 = Truck(0, {"x": 0, "y": 0})
@@ -106,6 +86,26 @@ def test_move_2():
     result += f"0 MOVE 0 1 0\n1 MOVE 0 2 0\n2 MOVE 0 3 0\n3 MOVE 0 4 0\n4 MOVE 0 5 0\n"
     result += f"5 DIG 0 5 0\n6 DIG 0 5 0\n"
     assert truck_01.move(matrice_test[1]) == result
+
+
+def test_recherche_plus_proche_3():
+    truck_01 = Truck(0, {"x": 8, "y": 9})
+    matrice_test = [
+        {"x": 10, "y": 10, "dig": 1},
+        {"x": 5, "y": 0, "dig": 2},
+        {"x": 1, "y": 0, "dig": 0},
+    ]
+    assert truck_01.recherche_du_plus_proche(matrice_test) == 0
+
+
+def test_nombre_deplacement_3():
+    truck_01 = Truck(0, {"x": 0, "y": 0})
+    matrice_test = [
+        {"x": 10, "y": 10, "dig": 1},
+        {"x": 5, "y": 0, "dig": 2},
+        {"x": 1, "y": 0, "dig": 0},
+    ]
+    assert truck_01.nombre_tour_deplacement(matrice_test[2]) == 1
 
 
 def test_move_3():

@@ -30,11 +30,7 @@ with open("sample.txt", "r", encoding="utf-8") as file:
 with open("sample.txt", "r", encoding="utf-8") as file:
     map = file.readlines()[5 : (5 + int(number_height))]
 print(map)
-# map.reverse()
-# print(map)
-# for elem in map:
-#     for char in elem:
-#         print(char)
+
 
 with open("sample.txt", "a", encoding="utf-8") as file:
     turn = 0
