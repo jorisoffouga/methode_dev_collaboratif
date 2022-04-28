@@ -17,7 +17,7 @@ Grâce à CircleCI, chaque test est joué a chaque commit et pull_request cela p
   * **_[test_roadmap.py](./test/test_roadmap.py)_** qui permet de tester les fonctions du fichier roadmap
 
 Pour mettre la qualimétrie de nos fichiers, un pre-commit est effectué pour formater chaque ficher que l'on souhaite
-commit sur git pour verifier que la pep8 est bien respecté grace à `black`.
+commit sur git pour verifier que la pep8 est bien respecté grace à `black` et reformate le fichier si besoin.
 
 
 ## Algorithme
